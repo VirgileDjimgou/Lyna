@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "+gYv8xoh60OZv9UTHPGB/k0kRmJwo8Dwrhp7+jFnPsZmHSopGoK9WWshJzMFW3TzNc8nNkkIh2B4yDSqj1pK3w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\chichikolon\\source\\repos\\Tutorial_ErsteSchritteRazorPages\\Web-API mit ASP.NET Core V2\\Web-API mit ASP.NET Core V2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\chichikolon\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

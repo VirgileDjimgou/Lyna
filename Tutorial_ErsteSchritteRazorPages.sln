@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial_ErsteSchritteRazorPages", "Tutorial_ErsteSchritteRazorPages\Tutorial_ErsteSchritteRazorPages.csproj", "{66F99471-1CDD-439C-86BC-9609A3B21C4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErsteSchritteCoreMVC", "ErsteSchritteCoreMVC\ErsteSchritteCoreMVC.csproj", "{78C7E550-A23D-4214-B609-4F1A12AC1544}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ErsteSchritteCoreMVC", "ErsteSchritteCoreMVC\ErsteSchritteCoreMVC.csproj", "{78C7E550-A23D-4214-B609-4F1A12AC1544}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web-API mit ASP.NET Core V2", "Web-API mit ASP.NET Core V2\Web-API mit ASP.NET Core V2.csproj", "{C4E5EF57-356D-4A57-B74C-667814712BB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{78C7E550-A23D-4214-B609-4F1A12AC1544}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78C7E550-A23D-4214-B609-4F1A12AC1544}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78C7E550-A23D-4214-B609-4F1A12AC1544}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4E5EF57-356D-4A57-B74C-667814712BB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4E5EF57-356D-4A57-B74C-667814712BB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4E5EF57-356D-4A57-B74C-667814712BB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4E5EF57-356D-4A57-B74C-667814712BB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

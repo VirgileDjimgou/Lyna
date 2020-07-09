@@ -1,0 +1,20 @@
+C:\Users\chichikolon\source\repos\Tutorial_ErsteSchritteRazorPages\Web-API mit ASP.NET Core V2\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\chichikolon\source\repos\Tutorial_ErsteSchritteRazorPages\Web-API mit ASP.NET Core V2\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\chichikolon\source\repos\Tutorial_ErsteSchritteRazorPages\Web-API mit ASP.NET Core V2\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\chichikolon\source\repos\Tutorial_ErsteSchritteRazorPages\Web-API mit ASP.NET Core V2\bin\Debug\netcoreapp3.1\Web-API mit ASP.NET Core V2.exe
+C:\Users\chichikolon\source\repos\Tutorial_ErsteSchritteRazorPages\Web-API mit ASP.NET Core V2\bin\Debug\netcoreapp3.1\Web-API mit ASP.NET Core V2.deps.json
+C:\Users\chichikolon\source\repos\Tutorial_ErsteSchritteRazorPages\Web-API mit ASP.NET Core V2\bin\Debug\netcoreapp3.1\Web-API mit ASP.NET Core V2.runtimeconfig.json
+C:\Users\chichikolon\source\repos\Tutorial_ErsteSchritteRazorPages\Web-API mit ASP.NET Core V2\bin\Debug\netcoreapp3.1\Web-API mit ASP.NET Core V2.runtimeconfig.dev.json
+C:\Users\chichikolon\source\repos\Tutorial_ErsteSchritteRazorPages\Web-API mit ASP.NET Core V2\bin\Debug\netcoreapp3.1\Web-API mit ASP.NET Core V2.dll
+C:\Users\chichikolon\source\repos\Tutorial_ErsteSchritteRazorPages\Web-API mit ASP.NET Core V2\bin\Debug\netcoreapp3.1\Web-API mit ASP.NET Core V2.pdb
+C:\Users\chichikolon\source\repos\Tutorial_ErsteSchritteRazorPages\Web-API mit ASP.NET Core V2\obj\Debug\netcoreapp3.1\Web-API mit ASP.NET Core V2.csprojAssemblyReference.cache
+C:\Users\chichikolon\source\repos\Tutorial_ErsteSchritteRazorPages\Web-API mit ASP.NET Core V2\obj\Debug\netcoreapp3.1\Web-API mit ASP.NET Core V2.AssemblyInfoInputs.cache
+C:\Users\chichikolon\source\repos\Tutorial_ErsteSchritteRazorPages\Web-API mit ASP.NET Core V2\obj\Debug\netcoreapp3.1\Web-API mit ASP.NET Core V2.AssemblyInfo.cs
+C:\Users\chichikolon\source\repos\Tutorial_ErsteSchritteRazorPages\Web-API mit ASP.NET Core V2\obj\Debug\netcoreapp3.1\Web-API mit ASP.NET Core V2.csproj.CoreCompileInputs.cache
+C:\Users\chichikolon\source\repos\Tutorial_ErsteSchritteRazorPages\Web-API mit ASP.NET Core V2\obj\Debug\netcoreapp3.1\Web-API mit ASP.NET Core V2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\chichikolon\source\repos\Tutorial_ErsteSchritteRazorPages\Web-API mit ASP.NET Core V2\obj\Debug\netcoreapp3.1\Web-API mit ASP.NET Core V2.RazorTargetAssemblyInfo.cache
+C:\Users\chichikolon\source\repos\Tutorial_ErsteSchritteRazorPages\Web-API mit ASP.NET Core V2\obj\Debug\netcoreapp3.1\staticwebassets\Web-API mit ASP.NET Core V2.StaticWebAssets.Manifest.cache
+C:\Users\chichikolon\source\repos\Tutorial_ErsteSchritteRazorPages\Web-API mit ASP.NET Core V2\obj\Debug\netcoreapp3.1\staticwebassets\Web-API mit ASP.NET Core V2.StaticWebAssets.xml
+C:\Users\chichikolon\source\repos\Tutorial_ErsteSchritteRazorPages\Web-API mit ASP.NET Core V2\obj\Debug\netcoreapp3.1\Web-API mit ASP.NET Core V2.dll
+C:\Users\chichikolon\source\repos\Tutorial_ErsteSchritteRazorPages\Web-API mit ASP.NET Core V2\obj\Debug\netcoreapp3.1\Web-API mit ASP.NET Core V2.pdb
+C:\Users\chichikolon\source\repos\Tutorial_ErsteSchritteRazorPages\Web-API mit ASP.NET Core V2\obj\Debug\netcoreapp3.1\Web-API mit ASP.NET Core V2.genruntimeconfig.cache
