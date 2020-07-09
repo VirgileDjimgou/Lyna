@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using Web_API_mit_ASP.NET_Core_V2.Modelle;
 
 namespace Web_API_mit_ASP.NET_Core_V2
 {

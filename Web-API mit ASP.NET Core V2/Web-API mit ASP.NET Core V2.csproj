@@ -5,5 +5,9 @@
     <RootNamespace>Web_API_mit_ASP.NET_Core_V2</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.5" />
+  </ItemGroup>
+
 
 </Project>
