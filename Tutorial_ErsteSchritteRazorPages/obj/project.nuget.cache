@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fPlsf4X9nJU0Q1sdOk8miXEps3h+UNFS5oUg+dpECZaOwDWvzo8i3o7iRF/+hMqckvd948es7t3LxbNDCNDF6w==",
+  "dgSpecHash": "NXUOTSoclputMvPrNuMj1q8mEeKuqnQi3SNMwWADg6nJUcu6USwfa7mraPV/gbX3H7sHs73+u4m6uXTmQg4MMg==",
   "success": true,
   "projectFilePath": "C:\\Users\\chichikolon\\source\\repos\\Tutorial_ErsteSchritteRazorPages\\Tutorial_ErsteSchritteRazorPages\\Tutorial_ErsteSchritteRazorPages.csproj",
   "expectedPackageFiles": [
@@ -166,8 +166,7 @@
     "C:\\Users\\chichikolon\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\chichikolon\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\chichikolon\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\chichikolon\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\chichikolon\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+    "C:\\Users\\chichikolon\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

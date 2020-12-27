@@ -10,5 +10,7 @@ namespace Web_API_mit_ASP.NET_Core_V2.Modelle
         public long Id { get; set; }
         public string Name { get; set; }
         public bool IsComplete { get; set; }
+
+        public string Secret { get; set; }
     }
 }
