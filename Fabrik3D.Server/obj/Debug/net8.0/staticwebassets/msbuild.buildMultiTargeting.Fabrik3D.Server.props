@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Fabrik3D.Server.props" />
+</Project>

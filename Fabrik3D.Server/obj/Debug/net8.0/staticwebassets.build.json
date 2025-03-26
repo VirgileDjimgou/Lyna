@@ -1,0 +1,24 @@
+{
+  "Version": 1,
+  "Hash": "uHqgYQhk+yD4Ed6Nq97dPWNvNjC0x1rWSDq9qLLnOU0=",
+  "Source": "Fabrik3D.Server",
+  "BasePath": "_content/Fabrik3D.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\repos\\Fabrik3D\\fabrik3d.client\\fabrik3d.client.esproj",
+      "Version": 2,
+      "Source": "fabrik3d.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
