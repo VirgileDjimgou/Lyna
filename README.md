@@ -1,6 +1,11 @@
 # 🏭 Industrial Simulator - Robot & CNC Cell (Vue.js + ASP.NET Core + MQTT + MongoDB)
 
-This project is a web-based **simulation platform** for industrial cells combining a **robotic arm** and **CNC machining center**, connected through **real-time MQTT messaging**. It features an interactive **3D HMI** for visualizing tasks and machine behavior using **Vue.js + Three.js**, backed by an **ASP.NET Core API** and **MongoDB** for data management.
+Fabrik3D is a modern and modular industrial simulation platform that emulates a robotic production cell combining a robotic arm, a CNC machining center, and other connected modules.
+
+It is built to help educators , student-engineers, engineers and integrators visualize, test, and optimize automation workflows without the need for real hardware.
+
+Using cutting-edge web technologies like Vue.js, Three.js, and MQTT, SimuCore brings realistic 3D interaction, real-time messaging, and modular backends via ASP.NET Core and MongoDB — all designed to simulate a real-world smart factory.
+This project is a web-based simulation platform for industrial cells combining a robotic arm and CNC machining center, connected through real-time MQTT messaging. It features an interactive 3D HMI for visualizing tasks and machine behavior using Vue.js + Three.js, backed by an ASP.NET Core API and MongoDB for data management.
 
 ---
 
