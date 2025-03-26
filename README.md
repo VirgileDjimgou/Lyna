@@ -1,6 +1,6 @@
 # 🛠️ SimuCore Lite - Educational Industrial Simulator (Vue.js + ASP.NET Core + MQTT)
 
-SimuCore Lite is a lightweight and educational-focused **industrial cell simulator** that combines:
+Fabrik3D Lite is a lightweight and educational-focused **industrial cell simulator** that combines:
 - A robotic arm with simple predefined movements
 - A CNC toolpath simulator based on basic G-code
 - An interactive 3D interface with Vue.js and Three.js
@@ -41,7 +41,7 @@ The goal is **not** to replicate real industrial complexity, but to:
 ## 📦 Project Structure
 
 ```
-simucore-lite/
+fabrik3d-lite/
 ├── Simulator.Client/           → Vue.js + Three.js HMI
 │   └── components/RobotAnimator.vue, CNCAnimator.vue
 ├── Simulator.Api/              → ASP.NET Core backend
