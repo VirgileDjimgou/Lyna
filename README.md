@@ -1,4 +1,4 @@
-# 🛠️ SimuCore Lite - Educational Industrial Simulator (Vue.js + ASP.NET Core + MQTT)
+# 🛠️ Fabrik3D Lite - Educational Industrial Simulator (Vue.js + ASP.NET Core + MQTT)
 
 Fabrik3D Lite is a lightweight and educational-focused **industrial cell simulator** that combines:
 - A robotic arm with simple predefined movements
