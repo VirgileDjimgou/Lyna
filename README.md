@@ -1,98 +1,107 @@
-# 🏭 Industrial Simulator - Robot & CNC Cell (Vue.js + ASP.NET Core + MQTT + MongoDB)
+# 🛠️ SimuCore Lite - Educational Industrial Simulator (Vue.js + ASP.NET Core + MQTT)
 
-Fabrik3D is a modern and modular industrial simulation platform that emulates a robotic production cell combining a robotic arm, a CNC machining center, and other connected modules.
-
-It is built to help educators , student-engineers, engineers and integrators visualize, test, and optimize automation workflows without the need for real hardware.
-
-Using cutting-edge web technologies like Vue.js, Three.js, and MQTT, SimuCore brings realistic 3D interaction, real-time messaging, and modular backends via ASP.NET Core and MongoDB — all designed to simulate a real-world smart factory.
-This project is a web-based simulation platform for industrial cells combining a robotic arm and CNC machining center, connected through real-time MQTT messaging. It features an interactive 3D HMI for visualizing tasks and machine behavior using Vue.js + Three.js, backed by an ASP.NET Core API and MongoDB for data management.
-
----
-
-## ✨ Key Features
-
-- 🦾 Simulated robot arm with inverse kinematics
-- 🛠 Simulated CNC machining module
-- 🌐 MQTT-based communication between modules
-- 🎮 Interactive HMI with Vue.js and Three.js
-- 📡 Real-time WebSocket sync
-- 🧠 Modular backend for jobs, parts, handlers and sensors
-- 📊 Historical data tracking and performance logging
+SimuCore Lite is a lightweight and educational-focused **industrial cell simulator** that combines:
+- A robotic arm with simple predefined movements
+- A CNC toolpath simulator based on basic G-code
+- An interactive 3D interface with Vue.js and Three.js
+- A backend built with ASP.NET Core and MQTT messaging
 
 ---
 
-## 🧱 Technologies
+## 🎯 Project Scope (Simplified)
 
-- `ASP.NET Core` (C#) - backend API
-- `Vue.js` (TypeScript) - frontend HMI
-- `Three.js` - 3D visualization
-- `MQTT` - real-time message bus
-- `MongoDB` - data persistence
-- `Docker` - containerization and deployability
+The goal is **not** to replicate real industrial complexity, but to:
+- Visualize robotic and CNC actions in a simulated factory
+- Learn about automation flows and message-based control
+- Create an extendable, modular base for training or prototyping
 
 ---
 
-## 📁 Project Structure
+## 🧩 Core Modules
+
+### Frontend (Vue.js + Three.js)
+- 📦 `3DRenderer` — Visual scene renderer
+- 🎮 `ControlPanel` — HMI control for launching jobs
+- 🦾 `RobotAnimator` — Animates arm from position list (no real IK)
+- 🛠 `CNCAnimator` — Executes and shows linear G-code toolpaths
+- 🔌 `FrontendMQTTHandler` — Listens for MQTT messages
+
+### Backend (ASP.NET Core)
+- 🧠 `JobRunner` — Reads JSON job definitions and sends MQTT commands
+- 🌐 `RestApi` — Launch jobs and expose system status
+- 💬 `MQTTPublisher` — Publishes minimal robot/CNC actions
+- 📚 `MongoDbGateway` — Saves job history and logs
+
+### Simulated Execution Services
+- 🤖 `SimRobotExec` — Interprets robot move commands
+- ⚙️ `SimCNCExec` — Parses and executes G-code lines
+
+---
+
+## 📦 Project Structure
 
 ```
-src/
-├── client/             → Vue.js + Three.js frontend
-├── server/             → ASP.NET Core backend API
-├── mqtt-worker/        → MQTT message processor
-├── sim-engine/         → Robot/CNC simulation logic
-├── models/             → Core data types
-├── data/               → JSON configs and seeds
-└── shared/             → Shared utilities and types
+simucore-lite/
+├── Simulator.Client/           → Vue.js + Three.js HMI
+│   └── components/RobotAnimator.vue, CNCAnimator.vue
+├── Simulator.Api/              → ASP.NET Core backend
+│   └── Controllers/SimulationController.cs
+├── Simulator.Models/           → JSON data models
+│   └── JobDefinition.cs, ToolpathLine.cs
+├── Simulator.MqttWorker/       → MQTT message handler
+│   └── RobotMoveHandler.cs
+├── Simulator.SimEngine/        → Execution logic
+│   └── TrajectoryPlayer.cs, ToolpathPlayer.cs
+├── Simulator.Shared/           → Constants, enums, etc.
+└── MongoDB/                    → Seeded simulation data
 ```
 
 ---
 
-## 🛣️ Roadmap
+## 🚀 MVP Implementation Plan (4 Weeks)
 
-### ✅ Phase 1: MVP Core (Month 1)
-- [x] Simulate robotic arm (6 DOF) with basic kinematics
-- [x] Simulate CNC toolpath preview
-- [x] Vue HMI with basic 3D scene (Fanuc + CNC)
-- [x] MQTT messaging between frontend/backend/simulators
-- [x] Job execution and result logging
+### Week 1
+- [x] Build project structure and components
+- [x] Setup 3D scene and load robot/CNC models
+- [x] Implement MQTT basic publishing/subscription
 
-### 🚧 Phase 2: Functional Extensions
-- [ ] Add tool changing & gripping modules
-- [ ] Integrate real-time sensor simulation (temp, vibration)
-- [ ] Add workpiece state and live positioning
-- [ ] User authentication and role-based access
+### Week 2
+- [x] Define a simple job runner (with hardcoded sequences)
+- [x] Build RobotAnimator + CNCAnimator (from JSON input)
+- [x] Display simulation status in UI
 
-### 🔮 Phase 3: Advanced Analytics & AI
-- [ ] Predictive maintenance simulation
-- [ ] Live production KPIs & optimization suggestions
-- [ ] Multi-robot and multi-CNC cell
+### Week 3
+- [ ] Store job history and simulation logs in MongoDB
+- [ ] Implement job selector with progress feedback
 
----
-
-## 📌 Milestones
-
-| Milestone | Description | Status |
-|----------|-------------|--------|
-| M1 | Project scaffolding and folder structure | ✅ Done |
-| M2 | MQTT + REST backend + Mongo integration | ✅ Done |
-| M3 | Robot and CNC simulators active | ✅ Done |
-| M4 | Real-time HMI 3D visual feedback | 🚧 In progress |
-| M5 | Tooling & extension system | ⏳ Planned |
-| M6 | Predictive analysis module | ⏳ Planned |
+### Week 4
+- [ ] Polish UI/UX (HMI), add manual overrides
+- [ ] Deploy backend with Docker
 
 ---
 
-## 🧑‍💻 How to Start
+## 📚 Example Simulation Flow
 
-1. Clone the repository  
-2. Run `docker-compose up`  
-3. Access:
-   - Frontend: http://localhost:5173
-   - API: http://localhost:5000/api
-4. Start developing 🚀
+1. User clicks “Launch Job A” in HMI
+2. `JobRunner` reads JSON and sends MQTT messages like:
+   ```json
+   { "topic": "robot/move", "data": [{ "x": 100, "y": 0, "z": 150 }] }
+   ```
+3. MQTT worker and frontend receive and animate accordingly
+4. MongoDB logs movement history
 
 ---
 
-## 📬 Contributions
+## 🔗 Technologies
+- Vue 3 + TypeScript + Three.js
+- ASP.NET Core + C#
+- MQTT (via Mosquitto or HiveMQ)
+- MongoDB
+- Docker (optional deployment)
 
-Feel free to fork this repo, suggest improvements, or contribute new modules!
+---
+
+## 💡 Use Cases
+- 📘 Robotics training
+- 🧪 Testing automation flows
+- 🏫 Educational demos for students
