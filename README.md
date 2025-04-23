@@ -1,107 +1,103 @@
-# 🛠️ Fabrik3D Lite - Educational Industrial Simulator (Vue.js + ASP.NET Core + MQTT)
 
-Fabrik3D Lite is a lightweight and educational-focused **industrial cell simulator** that combines:
-- A robotic arm with simple predefined movements
-- A CNC toolpath simulator based on basic G-code
-- An interactive 3D interface with Vue.js and Three.js
-- A backend built with ASP.NET Core and MQTT messaging
+# 🚘 DriveGuide AR – Augmented Reality Assistant for Automotive User Support
 
----
+**DriveGuide AR** is a hybrid AI-powered application that helps car users understand their vehicle’s interior using real-time object detection, enriched explanations (text/audio), and AR-based overlays.
+This project is built for technicians, rental users, or drivers who want to learn about the cockpit, dashboard symbols, or control buttons **just by pointing their smartphone camera inside the car**.
 
-## 🎯 Project Scope (Simplified)
+## 🧠 Project Scope
 
-The goal is **not** to replicate real industrial complexity, but to:
-- Visualize robotic and CNC actions in a simulated factory
-- Learn about automation flows and message-based control
-- Create an extendable, modular base for training or prototyping
+DriveGuide AR combines:
+- 📸 Real-time object detection inside a car (steering wheel, gear shift, dashboard symbols, etc.)
+- 🧠 An AI engine (YOLOv8) to recognize these components from live video frames
+- 💬 An explanation system that provides instant textual or audio feedback
+- 🧩 Modular architecture: Flask (AI) + ASP.NET Core (API) + Vue 3 + Capacitor (mobile frontend)
 
----
+## 🧩 Architecture Overview
 
-## 🧩 Core Modules
+[Vue 3 + Capacitor App] 
+     ↓  (camera frame)
+[Flask + YOLOv8 Detection API] 
+     ↓  (object label)
+[ASP.NET Core API + MongoDB] → Info bubble: text + audio + icon
 
-### Frontend (Vue.js + Three.js)
-- 📦 `3DRenderer` — Visual scene renderer
-- 🎮 `ControlPanel` — HMI control for launching jobs
-- 🦾 `RobotAnimator` — Animates arm from position list (no real IK)
-- 🛠 `CNCAnimator` — Executes and shows linear G-code toolpaths
-- 🔌 `FrontendMQTTHandler` — Listens for MQTT messages
+## 🧱 Core Components
 
-### Backend (ASP.NET Core)
-- 🧠 `JobRunner` — Reads JSON job definitions and sends MQTT commands
-- 🌐 `RestApi` — Launch jobs and expose system status
-- 💬 `MQTTPublisher` — Publishes minimal robot/CNC actions
-- 📚 `MongoDbGateway` — Saves job history and logs
+### 📱 Mobile Frontend (Vue 3 + Capacitor)
+- Camera preview and frame capture
+- Overlays with object labels + tooltips
+- Audio playback (text-to-speech)
+- Communication with Flask and ASP.NET Core APIs
 
-### Simulated Execution Services
-- 🤖 `SimRobotExec` — Interprets robot move commands
-- ⚙️ `SimCNCExec` — Parses and executes G-code lines
+### 🧠 AI Microservice (Flask + YOLOv8)
+- Receives image frames from the client
+- Runs object detection using a pre-trained YOLOv8 model
+- Returns list of detected components and coordinates
 
----
+### 🔧 Info API Backend (ASP.NET Core)
+- Serves rich metadata (name, usage, audio, translations, etc.)
+- Connects to a MongoDB or JSON-based store
+- Manages endpoints for frontend use
 
-## 📦 Project Structure
+## 🧰 Example Object Record (JSON)
 
-```
-fabrik3d-lite/
-├── Simulator.Client/           → Vue.js + Three.js HMI
-│   └── components/RobotAnimator.vue, CNCAnimator.vue
-├── Simulator.Api/              → ASP.NET Core backend
-│   └── Controllers/SimulationController.cs
-├── Simulator.Models/           → JSON data models
-│   └── JobDefinition.cs, ToolpathLine.cs
-├── Simulator.MqttWorker/       → MQTT message handler
-│   └── RobotMoveHandler.cs
-├── Simulator.SimEngine/        → Execution logic
-│   └── TrajectoryPlayer.cs, ToolpathPlayer.cs
-├── Simulator.Shared/           → Constants, enums, etc.
-└── MongoDB/                    → Seeded simulation data
-```
+```json
+{
+  "id": "gear_shift",
+  "name": "Levier de vitesse",
+  "descriptionShort": "Permet de changer les vitesses.",
+  "descriptionLong": "Le levier permet de sélectionner les modes : Drive, Neutre, Recul, Parking.",
+  "models": ["Mazda 3", "Toyota Corolla"],
+  "audio": {
+    "fr": "gear_shift_fr.mp3",
+    "en": "gear_shift_en.mp3"
+  },
+  "icon": "gear.svg"
+}
 
----
-
-## 🚀 MVP Implementation Plan (4 Weeks)
+## 🧪 MVP Roadmap (April–May 2024)
 
 ### Week 1
-- [x] Build project structure and components
-- [x] Setup 3D scene and load robot/CNC models
-- [x] Implement MQTT basic publishing/subscription
+- [x] Setup Vue 3 + Capacitor + Camera preview
+- [x] Create YOLOv8 + Flask backend
+- [ ] Implement object detection and API connection
 
 ### Week 2
-- [x] Define a simple job runner (with hardcoded sequences)
-- [x] Build RobotAnimator + CNCAnimator (from JSON input)
-- [x] Display simulation status in UI
+- [ ] Build ASP.NET Core API + MongoDB connector
+- [ ] Design data schema for in-car components
+- [ ] Display overlays and labels on camera
 
 ### Week 3
-- [ ] Store job history and simulation logs in MongoDB
-- [ ] Implement job selector with progress feedback
+- [ ] Add tooltip logic + proximity/zoom detection
+- [ ] Integrate audio playback (Web Speech / Capacitor)
 
 ### Week 4
-- [ ] Polish UI/UX (HMI), add manual overrides
-- [ ] Deploy backend with Docker
+- [ ] Package as APK with Capacitor
+- [ ] Dockerize Flask + ASP.NET Core backends
+- [ ] Test with 2 real car models (Mazda, Toyota)
 
----
+## 🛠 Technologies Used
 
-## 📚 Example Simulation Flow
+- **Frontend**: Vue 3 + TypeScript + Capacitor + Three.js
+- **AI Engine**: Python + Flask + YOLOv8
+- **API Backend**: ASP.NET Core Web API
+- **Database**: MongoDB (or static JSON dataset)
+- **Packaging**: Docker + Docker Compose
 
-1. User clicks “Launch Job A” in HMI
-2. `JobRunner` reads JSON and sends MQTT messages like:
-   ```json
-   { "topic": "robot/move", "data": [{ "x": 100, "y": 0, "z": 150 }] }
-   ```
-3. MQTT worker and frontend receive and animate accordingly
-4. MongoDB logs movement history
+## 💡 Potential Use Cases
 
----
+- 🧰 Technician assistance on-site
+- 🚗 Rental car quick onboarding
+- 📘 Automotive education (demo mode)
+- 👁️ AR-based dashboard diagnostic help
 
-## 🔗 Technologies
-- Vue 3 + TypeScript + Three.js
-- ASP.NET Core + C#
-- MQTT (via Mosquitto or HiveMQ)
-- MongoDB
-- Docker (optional deployment)
+## 📸 Sneak Peek (coming soon…)
 
----
+![preview](./docs/mockup-preview.jpg)
 
-## 💡 Use Cases
-- 📘 Robotics training
-- 🧪 Testing automation flows
-- 🏫 Educational demos for students
+## 🤝 Contributors
+
+- **Patrick** – Concept, architecture, and full-stack implementation  
+
+## 📜 License
+
+MIT License – Free to use, contribute, and expand under open innovation principles.
