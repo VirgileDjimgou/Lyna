@@ -1,0 +1,3 @@
+version: '3.8'
+services:
+  # Flask and ASP.NET Core services to be defined

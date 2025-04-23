@@ -1,6 +1,0 @@
-@Fabrik3dLite.Server_HostAddress = http://localhost:5277
-
-GET {{Fabrik3dLite.Server_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
