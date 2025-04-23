@@ -1,103 +1,83 @@
+# 🚘 DriveGuide AR – Augmented Reality Assistant for In-Car Intelligence
 
-# 🚘 DriveGuide AR – Augmented Reality Assistant for Automotive User Support
+**DriveGuide AR** is a hybrid AI-powered assistant designed to help users identify and understand the components inside a vehicle using their smartphone camera. By leveraging real-time object detection and an augmented reality overlay, DriveGuide AR provides instant feedback about dashboard symbols, control buttons, and cockpit elements — making car interaction intuitive for everyone.
 
-**DriveGuide AR** is a hybrid AI-powered application that helps car users understand their vehicle’s interior using real-time object detection, enriched explanations (text/audio), and AR-based overlays.
-This project is built for technicians, rental users, or drivers who want to learn about the cockpit, dashboard symbols, or control buttons **just by pointing their smartphone camera inside the car**.
 
-## 🧠 Project Scope
+## 🎯 Project Overview
 
 DriveGuide AR combines:
-- 📸 Real-time object detection inside a car (steering wheel, gear shift, dashboard symbols, etc.)
-- 🧠 An AI engine (YOLOv8) to recognize these components from live video frames
-- 💬 An explanation system that provides instant textual or audio feedback
-- 🧩 Modular architecture: Flask (AI) + ASP.NET Core (API) + Vue 3 + Capacitor (mobile frontend)
 
-## 🧩 Architecture Overview
+- 📸 Real-time detection of interior car elements (steering wheel, gear shift, AC, warning lights, etc.)
+- 🧠 AI-powered backend (YOLOv8) to identify visual components from live camera input
+- 💬 Enriched information displayed via tooltips and audio hints (text-to-speech)
+- 🧩 Modular hybrid architecture with **Flask (AI)**, **ASP.NET Core (API)**, and **Vue 3 + Capacitor (Frontend)**
 
-[Vue 3 + Capacitor App] 
-     ↓  (camera frame)
-[Flask + YOLOv8 Detection API] 
-     ↓  (object label)
-[ASP.NET Core API + MongoDB] → Info bubble: text + audio + icon
 
-## 🧱 Core Components
+## 🧠 Architecture Overview
 
-### 📱 Mobile Frontend (Vue 3 + Capacitor)
-- Camera preview and frame capture
-- Overlays with object labels + tooltips
-- Audio playback (text-to-speech)
-- Communication with Flask and ASP.NET Core APIs
+```plaintext
+[Vue 3 + Capacitor Mobile App]
+       ↓ (camera frame)
+[Flask + YOLOv8 Detection API]
+       ↓ (detected object labels)
+[ASP.NET Core API + MongoDB]
+       ↓ (descriptive metadata, audio, icons)
+[Augmented Reality Overlay + TTS Output]
+```
 
-### 🧠 AI Microservice (Flask + YOLOv8)
-- Receives image frames from the client
-- Runs object detection using a pre-trained YOLOv8 model
-- Returns list of detected components and coordinates
 
-### 🔧 Info API Backend (ASP.NET Core)
-- Serves rich metadata (name, usage, audio, translations, etc.)
-- Connects to a MongoDB or JSON-based store
-- Manages endpoints for frontend use
+## 🧩 Core Modules
 
-## 🧰 Example Object Record (JSON)
+### 📱 Mobile App (Vue 3 + Capacitor)
+- Live camera feed
+- Frame capture and API calls
+- 2D/3D overlays (labels + tooltips)
+- Audio output via Web Speech API or Capacitor plugin
+
+### 🧠 AI Detection (Flask + YOLOv8)
+- Receives camera frames (JPEG)
+- Runs YOLOv8 inference
+- Returns bounding boxes + class labels
+
+### 🧰 Metadata API (ASP.NET Core)
+- Exposes detailed metadata for detected objects
+- Handles multilingual text and audio support
+- Connects to MongoDB or serves from enriched JSON
+
+
+## 📦 Example Object Metadata
 
 ```json
 {
   "id": "gear_shift",
   "name": "Levier de vitesse",
   "descriptionShort": "Permet de changer les vitesses.",
-  "descriptionLong": "Le levier permet de sélectionner les modes : Drive, Neutre, Recul, Parking.",
+  "descriptionLong": "Ce levier permet de sélectionner les modes de conduite : D, N, R, P. Certains modèles permettent un mode manuel ou sport.",
   "models": ["Mazda 3", "Toyota Corolla"],
+  "icon": "gear.svg",
   "audio": {
     "fr": "gear_shift_fr.mp3",
     "en": "gear_shift_en.mp3"
-  },
-  "icon": "gear.svg"
+  }
 }
+```
 
-## 🧪 MVP Roadmap (April–May 2024)
+## 📂 Folder Structure
 
-### Week 1
-- [x] Setup Vue 3 + Capacitor + Camera preview
-- [x] Create YOLOv8 + Flask backend
-- [ ] Implement object detection and API connection
+driveguide-ar/
+├── client-app/           # Vue 3 + Capacitor mobile frontend
+├── backend-ai/           # Flask + YOLOv8 inference API
+├── backend-core/         # ASP.NET Core API (data + metadata)
+├── shared-data/          # JSON, icons, audio resources
+├── docker-compose.yml    # Docker orchestration for all services
+└── README.md             # Project documentation
 
-### Week 2
-- [ ] Build ASP.NET Core API + MongoDB connector
-- [ ] Design data schema for in-car components
-- [ ] Display overlays and labels on camera
 
-### Week 3
-- [ ] Add tooltip logic + proximity/zoom detection
-- [ ] Integrate audio playback (Web Speech / Capacitor)
+## 🚀 MVP Roadmap
 
-### Week 4
-- [ ] Package as APK with Capacitor
-- [ ] Dockerize Flask + ASP.NET Core backends
-- [ ] Test with 2 real car models (Mazda, Toyota)
-
-## 🛠 Technologies Used
-
-- **Frontend**: Vue 3 + TypeScript + Capacitor + Three.js
-- **AI Engine**: Python + Flask + YOLOv8
-- **API Backend**: ASP.NET Core Web API
-- **Database**: MongoDB (or static JSON dataset)
-- **Packaging**: Docker + Docker Compose
-
-## 💡 Potential Use Cases
-
-- 🧰 Technician assistance on-site
-- 🚗 Rental car quick onboarding
-- 📘 Automotive education (demo mode)
-- 👁️ AR-based dashboard diagnostic help
-
-## 📸 Sneak Peek (coming soon…)
-
-![preview](./docs/mockup-preview.jpg)
-
-## 🤝 Contributors
-
-- **Patrick** – Concept, architecture, and full-stack implementation  
-
-## 📜 License
-
-MIT License – Free to use, contribute, and expand under open innovation principles.
+| Week | Deliverables                                                                 |
+|------|------------------------------------------------------------------------------|
+| 1    | Vue + Capacitor app with live camera preview                                 |
+| 2    | Flask backend with YOLOv8 model and /detect endpoint                         |
+| 3    | ASP.NET Core API with enriched vehicle metadata                              |
+| 4    | Integration, audio playback, packaging as APK                                |
