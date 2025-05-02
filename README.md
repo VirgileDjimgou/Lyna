@@ -50,9 +50,10 @@ DriveGuide AR combines:
 ```json
 {
   "id": "gear_shift",
-  "name": "Levier de vitesse",
-  "descriptionShort": "Permet de changer les vitesses.",
-  "descriptionLong": "Ce levier permet de sélectionner les modes de conduite : D, N, R, P. Certains modèles permettent un mode manuel ou sport.",
+  "name": "Gear Shift Lever",
+  "descriptionShort": "Used to change gears.",
+  "descriptionLong": "This lever allows the driver to select driving modes: Drive (D), Neutral (N), Reverse (R), and Park (P). Some models also support manual or 
+             sport mode.",
   "models": ["Mazda 3", "Toyota Corolla"],
   "icon": "gear.svg",
   "audio": {
@@ -60,6 +61,7 @@ DriveGuide AR combines:
     "en": "gear_shift_en.mp3"
   }
 }
+
 ```
 
 ## 📂 Folder Structure
