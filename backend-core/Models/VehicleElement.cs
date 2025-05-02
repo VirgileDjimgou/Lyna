@@ -1,5 +1,5 @@
 
-namespace BackendCore.Models
+namespace backend_core.Models
 {
     public class VehicleElement
     {

@@ -1,3 +1,14 @@
-node_modules/
-.DS_Store
-*.log
+je souhaite implementer un Projet : ClarifAI AR – Vue 3 + Capacitor – Étape 1
+Objectif : créer moi une application Vue 3 (TypeScript) avec les fonctionnalités suivantes :
+ 1. Activer la caméra d’un smartphone via getUserMedia()
+ 2. Afficher le flux vidéo en direct dans un composant Vue
+ 3. Préparer un overlay en Canvas ou Three.js pour afficher des cadres et infobulles
+ 4. Prévoir un bouton pour capturer une frame (future intégration avec Flask/YOLO)
+ 5. Ajouter un service TypeScript "CameraService" pour isoler la logique vidéo
+ 6. Prévoir un composant "DetectionOverlay.vue" pour gérer les labels AR
+ 7. Utiliser Composition API + TypeScript + Bootstrap 5 
+
+je souhaite ces composants soient implemté seleon la logique que j'ai decrit: CameraPreview.vue et DetectionOverlay.vue 
+ainsi que CameraService.ts 
+
+les commentaires doivent etre en anglais exclusivement !.
