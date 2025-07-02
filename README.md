@@ -1,11 +1,11 @@
-# 🚘 DriveGuide AR – Augmented Reality Assistant for In-Car Intelligence
+# 🚘 Lyna – Augmented Reality Assistant for In-Car Intelligence
 
-**DriveGuide AR** is a hybrid AI-powered assistant designed to help users identify and understand the components inside a vehicle using their smartphone camera. By leveraging real-time object detection and an augmented reality overlay, DriveGuide AR provides instant feedback about dashboard symbols, control buttons, and cockpit elements — making car interaction intuitive for everyone.
+**Lyna** is a hybrid AI-powered assistant designed to help users identify and understand the components inside a vehicle using their smartphone camera. By leveraging real-time object detection and an augmented reality overlay, Lyna provides instant feedback about dashboard symbols, control buttons, and cockpit elements — making car interaction intuitive for everyone.
 
 
 ## 🎯 Project Overview
 
-DriveGuide AR combines:
+Lyna combines:
 
 - 📸 Real-time detection of interior car elements (steering wheel, gear shift, AC, warning lights, etc.)
 - 🧠 AI-powered backend (YOLOv8) to identify visual components from live camera input
@@ -66,7 +66,7 @@ DriveGuide AR combines:
 
 ## 📂 Folder Structure
 
-driveguide-ar/
+Lyna-ar/
 ├── client-app/           # Vue 3 + Capacitor mobile frontend
 ├── backend-ai/           # Flask + YOLOv8 inference API
 ├── backend-core/         # ASP.NET Core API (data + metadata)
