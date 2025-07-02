@@ -48,12 +48,64 @@
         "documentation": {}
     },
     {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
         "label": "io",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "io",
         "description": "io",
         "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "types",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "types",
+        "description": "types",
+        "detail": "types",
+        "documentation": {}
+    },
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "app",
+        "description": "app",
+        "isExtraImport": true,
+        "detail": "app",
         "documentation": {}
     },
     {
@@ -97,6 +149,24 @@
         "description": "backend-ai.routes.detect",
         "peekOfCode": "model = YOLO('yolov8n.pt')  # Replace with actual path if needed\n@detect_bp.route('/detect', methods=['POST'])\ndef detect():\n    if 'image' not in request.files:\n        return jsonify({'error': 'No image provided'}), 400\n    image_file = request.files['image']\n    image = Image.open(image_file.stream)\n    results = model.predict(image)\n    detections = []\n    for r in results:",
         "detail": "backend-ai.routes.detect",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 2,
+        "importPath": "backend-ai.tests.test_detect",
+        "description": "backend-ai.tests.test_detect",
+        "peekOfCode": "def client():\n    app.config['TESTING'] = True\n    with app.test_client() as client:\n        yield client\ndef test_detect(monkeypatch, client):\n    def fake_predict(image):\n        class XY(list):\n            def tolist(self):\n                return list(self)\n        class Box:",
+        "detail": "backend-ai.tests.test_detect",
+        "documentation": {}
+    },
+    {
+        "label": "test_detect",
+        "kind": 2,
+        "importPath": "backend-ai.tests.test_detect",
+        "description": "backend-ai.tests.test_detect",
+        "peekOfCode": "def test_detect(monkeypatch, client):\n    def fake_predict(image):\n        class XY(list):\n            def tolist(self):\n                return list(self)\n        class Box:\n            def __init__(self):\n                self.cls = 0\n                self.xyxy = [XY([0, 0, 1, 1])]\n                self.conf = 0.9",
+        "detail": "backend-ai.tests.test_detect",
         "documentation": {}
     },
     {
