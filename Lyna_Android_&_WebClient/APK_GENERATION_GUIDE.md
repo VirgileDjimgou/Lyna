@@ -14,7 +14,7 @@ Before generating the APK, ensure you have:
 #### Step 1: Build and Sync Your Project
 ```bash
 # Navigate to your project directory
-cd "c:\repos\Pii\PiiXr_Android_&_WebClient"
+cd "C:\repos\Lyna\Lyna_Android_&_WebClient"
 
 # Build the Vue application
 npm run build
@@ -49,7 +49,7 @@ npx cap open android
 
 #### Debug APK (for testing)
 ```bash
-cd "c:\repos\Pii\ClarifAI_VueClient"
+cd "C:\repos\Lyna\Lyna_Android_&_WebClient"
 npm run build
 npx cap sync android
 cd android
@@ -59,7 +59,7 @@ cd android
 
 #### Release APK (for distribution)
 ```bash
-cd "c:\repos\Pii\ClarifAI_VueClient"
+cd "C:\repos\Lyna\Lyna_Android_&_WebClient"
 npm run build
 npx cap sync android
 cd android
@@ -135,7 +135,13 @@ npx cap run android
 - Check that dist folder exists
 - Run npx cap sync android again
 
-**5. "Permission errors in app"**
+**5. "vue-tsc command not found" (Windows)**
+- If you get "Der Befehl "vue-tsc" ist entweder falsch geschrieben oder konnte nicht gefunden werden"
+- This indicates an npm/npx path resolution issue on Windows
+- Solution: The package.json has been updated to use direct node commands
+- Run: `npm install` then `npm run build` should work
+
+**6. "Permission errors in app"**
 - Check AndroidManifest.xml has correct permissions
 - Test on device, not just emulator
 
@@ -166,7 +172,7 @@ For Google Play Store distribution:
 ### 📁 Project Structure After Build
 
 ```
-ClarifAI_VueClient/
+Lyna_Android_&_WebClient/
 ├── dist/                     # Built web assets
 ├── android/                  # Native Android project
 │   ├── app/
